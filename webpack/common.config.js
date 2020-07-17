@@ -32,9 +32,11 @@ module.exports = {
       },
 
       {
-        test: /\.(mp4|webm)$/,
-        loader: 'url?limit=10000',
-      },
+      
+        test: /\.(mov|mp4|ogg)$/, loader: 'url-loader' ,
+   
+        loader: 'url-loader?limit=10000&mimetype=video/mp4'
+           },
     ],
   },
 

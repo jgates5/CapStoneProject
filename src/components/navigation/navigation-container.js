@@ -1,21 +1,43 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
+
+
 
 export default class NavigationContainer extends Component {
-    constructor() {
-      super();
-    }
-    render() {
-        return (
-            <div>
-                <NavLink exact to="/">
-                Home
-                </NavLink>
-                <NavLink to="/about-me" activeClassName="nav-link-active">About Me</NavLink>
-                <NavLink to="/my-book" activeClassName="nav-link-active">My Book</NavLink>
-                <NavLink to="/my-zumba" activeClassName="nav-link-active">My Zumba</NavLink>
-                <NavLink to="/follow-me" activeClassName="nav-link-active">Follow Me</NavLink>
-            </div>
-        );
-    }
+
+
+  state = {
+    toggle: false
+  };
+
+  menuToggleOpen = () => {
+      this.setState({toggle: false});
+  }
+  menuToggleClose = () => {
+    this.setState({toggle: true});
 }
+
+  render() {
+    const {toggle} = this.state
+    return (
+        <div>
+          <header>
+            <div style={{width:"100%"}}>
+              <div style={{float:"left"}} className="menu" onClick={this.menuToggleOpen}>Menu</div>
+              <div style={{float:"right"}} className="close" onClick={this.menuToggleClose}>X</div>
+            </div>
+            <ul className={toggle ? "toggle" : ""}>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about-me" >About</Link></li>
+              <li><Link to="/my-zumba">Zumba</Link></li>
+            </ul>
+          </header>
+          
+        </div>
+        )
+  }
+}
+
+
