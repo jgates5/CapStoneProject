@@ -22,8 +22,8 @@ export default class NavigationContainer extends Component {
   render() {
     const {toggle} = this.state
     return (
-        <div>
-          <header>
+        <div className="header">
+          
             <div style={{width:"100%"}}>
               <div style={{float:"left"}} className="menu" onClick={this.menuToggleOpen}>Menu</div>
               <div style={{float:"right"}} className="close" onClick={this.menuToggleClose}>X</div>
@@ -33,7 +33,7 @@ export default class NavigationContainer extends Component {
               <li><Link to="/about-me" >About</Link></li>
               <li><Link to="/my-zumba">Zumba</Link></li>
             </ul>
-          </header>
+       
           
         </div>
         )
