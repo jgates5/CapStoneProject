@@ -30,7 +30,7 @@ export default class NavigationContainer extends Component {
             </div>
             <ul className={toggle ? "toggle" : ""}>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about-me" >About</Link></li>
+              
               <li><Link to="/my-zumba">Zumba</Link></li>
             </ul>
        
