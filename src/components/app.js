@@ -48,6 +48,7 @@ export default class App extends Component {
              
               <Route path="/my-zumba">
                 <MyZumba
+                  errorMessage={this.state.errorMessage}
                   TestUserNamePassword={this.AttemptAuthenticate}
                   LogUserOut={this.LogOut}
                   CreateNewUser={this.CreateNewUser}
@@ -95,9 +96,10 @@ export default class App extends Component {
             this.handleSuccessfulLogin(userName);
             //TODO: Tell the user it was successful
           } else {
+
             //TODO: Tell the user why it failed
             this.setState({
-              errorMessage: "Username or Password incorrect"
+              errorMessage: "Username taken"
             });
             this.handleFailedLogin();
           }

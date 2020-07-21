@@ -3,10 +3,12 @@ import Login from './login';
 import Calendar from './calendar';
 
 export default class MyZubma extends Component {
+  
   render(){
     return(
       <div>
         <Login 
+          errorMessage={this.props.errorMessage}
           TestUserNamePassword={this.props.TestUserNamePassword}
           LogUserOut={this.props.LogUserOut}
           CreateNewUser={this.props.CreateNewUser}
@@ -27,4 +29,6 @@ export default class MyZubma extends Component {
       </div>
     )
   }
+
 }
+

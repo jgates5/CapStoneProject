@@ -38,6 +38,8 @@ export default class Login extends Component {
       return(
         <div>
           <div>
+
+              <h1>{this.props.errorMessage}</h1>
               Zumba
               Login
               <input
