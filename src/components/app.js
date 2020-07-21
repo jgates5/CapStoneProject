@@ -99,7 +99,7 @@ export default class App extends Component {
 
             //TODO: Tell the user why it failed
             this.setState({
-              errorMessage: "Username taken"
+              errorMessage: "Username or Password taken"
             });
             this.handleFailedLogin();
           }

@@ -29,6 +29,4 @@ export default class MyZubma extends Component {
       </div>
     )
   }
-
 }
-
