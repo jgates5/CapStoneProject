@@ -81,7 +81,7 @@ export default class App extends Component {
     //****************Handle Login */
     CreateNewUser = (userName,password) => {
       //TODO: Do some error checking to make sure stuff is not blank
-        fetch("http://127.0.0.1:5000/user/create", {
+        fetch("https://api-backend-final-project-jwg.herokuapp.com/user/create", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
@@ -119,7 +119,7 @@ export default class App extends Component {
     }
 
     AttemptAuthenticate = (userName,password) => {
-      fetch("http://127.0.0.1:5000/user/verification", {
+      fetch("https://api-backend-final-project-jwg.herokuapp.com/user/verification", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
