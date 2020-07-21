@@ -12,8 +12,29 @@ export default class Calendar extends Component {
        
         :""
         }
-     
+      <button onClick={this.giveUserAppointment(appointmentDate)}>Click here for appoinment</button>
       </div>
     );
+  }
+
+  giveUserAppointment = (eventStartDate) => {
+    var convertedStartDate = moment(eventStartDate).toISOString();
+    let data = `
+      BEGIN:VEVENT
+      CREATED:20151219T021727Z
+      DTEND;TZID=America/Toronto:20170515T110000
+      DTSTAMP:`+convertedStartDate+`
+      DTSTART;TZID=America/Toronto:20170515T100000
+      LAST-MODIFIED:20151219T021727Z
+      RRULE:FREQ=DAILY;UNTIL=20170519T035959Z
+      SEQUENCE:0
+      SUMMARY:Meeting
+      TRANSP:OPAQUE
+      UID:21B97459-D97B-4B23-AF2A-E2759745C299
+      END:VEVENT
+      END:VCALENDAR
+  `;
+
+  fileDownload(data, 'appointment.ics');
   }
 }

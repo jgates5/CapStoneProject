@@ -28,7 +28,8 @@ export default class Login extends Component {
     }
 
   render(){
-    if(this.props.IsUserLoggedIn == "LOGGED_IN"){
+    let checkValue = "LOGGED_IN";
+    if(this.props.IsUserLoggedIn == checkValue){
       return(<div>
         You are logged in as {this.props.LoggedInUserName}
         <button onClick={this.LogoutButtonIsClicked} >Log out</button>
