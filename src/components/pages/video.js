@@ -3,7 +3,7 @@
  import ReactDOM from 'react-dom'
 // import Vimeo from '@u-wave/react-vimeo'
 import Home from "../../../static/assets/img/home.png";
-import DanceImg from "../../../static/assets/img/danceallnight.jpg";
+import DanceImg from "../../../static/assets/img/zumbadance.png";
 import Beat from "../../../static/assets/img/dj.jpg";
 
  export default function () {
