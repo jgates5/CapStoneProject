@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+}
 .header {
   min-height: 70px;
   background: black;
@@ -41,6 +44,7 @@
   text-transform: uppercase;
   opacity: 0.6;
   padding:0px 30px 40px 30px;
+  font-size: 25px;
 }
 
 .header ul li a:hover {

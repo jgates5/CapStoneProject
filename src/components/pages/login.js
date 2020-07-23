@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import ReactDOM from 'react-dom';
 
-
+<script type="text/babel"></script>
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -11,6 +11,8 @@ export default class Login extends Component {
       password:"",
       newUsername:"",
       newPassword:"",
+      showSignup:false,
+      showLogin:true
     };
  
       this.handleSuccessfulUser = this.handleSuccessfulUser.bind(this);
@@ -26,7 +28,31 @@ export default class Login extends Component {
     handleUnSuccessfulUser() {
     this.props.handleUnSuccessfulLogin();
     }
+/*
+  <script>
+  $(document).ready(function(){
+    $(".login-form").hide();
+    $(".login").css("background", "none");
+    $(".login").click(function(){
+      $(".signup-form").hide();
+      $(".login-form").show();
+      $(".signup").css("background", "none");
+      $(".login").css("background", "#fff");
+    });
 
+    $(".signup").click(function(){
+      $(".signup-form").show();
+      $(".login-form").hide();
+      $(".login").css("background", "none");
+      $(".signup").css("background", "#fff");
+    });
+
+    $(".btn").click(function(){
+      $(".input").val("");
+    });
+  })
+</script>
+*/
   render(){
     let checkValue = "LOGGED_IN";
     if(this.props.IsUserLoggedIn == checkValue){
@@ -37,53 +63,56 @@ export default class Login extends Component {
     }
     else {
       return(
-        <div>
-          <div>
+          <div className="container">
+            <div className={"signup" + ((this.state.showSignup) ? "" : " grey")  }
+              onClick={this.showSignupSection}
+            >
+              Sign Up
+            </div>
+            <div className={"login" + ((this.state.showLogin) ? "" : " grey")  }
+              onClick={this.showLoginSection}
+            >
+              Log In
+            </div>
+            <div className={"signup-form" + ((this.state.showSignup) ? " test" : " hidden")}>
+                <input
+                type="username"
+                name="newUsername"
+                placeholder="Choose a Username"
+                value={this.state.newUsername}
+                onChange={this.handleChange}
+              />
 
-              <h1>{this.props.errorMessage}</h1>
-              Zumba
-              Login
               <input
-              type="username"
-              name="username"
-              placeholder="Username"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-              <button onClick={(ev) => {this.LoginButtonIsClicked()}}>Login</button>
+                type="password"
+                name="newPassword"
+                placeholder="Choose a Password"
+                value={this.state.newPassword}
+                onChange={this.handleChange}
+              />
+              <div className="button" onClick={(ev) => {this.CreateButtonIsClicked()}}>Create Account</div>
+            </div>
+            <div className={"login-form" + ((this.state.showLogin) ? " test" : " hidden") }>
+                <h5>{this.props.errorMessage}</h5>
+                <input
+                type="username"
+                name="username"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.handleChange}
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <div className="button" onClick={(ev) => {this.LoginButtonIsClicked()}}>Login In</div>
+            </div>
           </div>
-          <div>
-            Or
-          </div>
-          <div>
-          Zumba
-          Create New Account
-          <input
-          type="username"
-          name="newUsername"
-          placeholder="New username"
-          value={this.state.newUsername}
-          onChange={this.handleChange}
-        />
-
-        <input
-          type="password"
-          name="newPassword"
-          placeholder="New password"
-          value={this.state.newPassword}
-          onChange={this.handleChange}
-        />
-          <button onClick={(ev) => {this.CreateButtonIsClicked()}}>Create User</button>
-      </div>
-      </div>
+          
+      
       );
     }
   }
@@ -95,6 +124,21 @@ export default class Login extends Component {
   }
   CreateButtonIsClicked = () => {
     this.props.CreateNewUser(this.state.newUsername,this.state.newPassword);
+  }
+
+  showSignupSection = () => {
+    this.setState({
+      showLogin:false,
+      showSignup:true
+    });
+  }
+
+  showLoginSection = () => {
+    this.setState({
+      showLogin:true,
+      showSignup:false
+    });
+
   }
 
   handleChange = (event) => {

@@ -11,13 +11,6 @@ export default function() {
         
         
           <Video />
-        <div className="red box">
-          <div class="glow-on-hover">
-          <form>
-            <button formaction="/my-zumba">Sign Up!</button>
-          </form>
-          </div>
-        </div>
         <Image />
       
       </div>

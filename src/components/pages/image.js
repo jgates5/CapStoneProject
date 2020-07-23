@@ -4,7 +4,7 @@ export default class ZumbaPicture extends Component {
   render(){
     return (
       <div>
-        <div className="container">
+        <div className="box-container">
           <img className="container__image" 
             src={Zumba} alt="" />
 
