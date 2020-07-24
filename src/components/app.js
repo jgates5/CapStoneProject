@@ -70,7 +70,7 @@ export default class App extends Component {
               </div>
           
               <div className="footer_text">
-                <h3>COPY RIGHT BY BOTTEGA PROJECT</h3> 
+                <h6>COPY RIGHT BY BOTTEGA PROJECT</h6> 
               </div>
             </div>
           </div>
