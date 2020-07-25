@@ -84,7 +84,7 @@ export default class Login extends Component {
                 value={this.state.password}
                 onChange={this.handleChange}
               />
-              <div className="button" onClick={(ev) => {this.LoginButtonIsClicked()}}>Login In</div>
+              <div className="button" onClick={(ev) => {this.LoginButtonIsClicked()}}>Login</div>
             </div>
           </div>
           

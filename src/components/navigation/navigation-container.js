@@ -31,7 +31,7 @@ export default class NavigationContainer extends Component {
             <ul className={toggle ? "toggle" : ""}>
               <li><Link to="/">Home</Link></li>
               
-              <li><Link to="/my-zumba">Zumba</Link></li>
+              <li><Link to="/my-zumba">Virtual Classes</Link></li>
             </ul>
        
           

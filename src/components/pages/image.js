@@ -3,22 +3,24 @@ import Zumba from "../../../static/assets/img/zumbapic.jpg";
 export default class ZumbaPicture extends Component {
   render(){
     return (
-      <div>
-        <div className="box-container">
-          <img className="container__image" 
+        <div className="responsive">
+         
+            <img className="container__image" 
             src={Zumba} alt="" />
-
-          
-          <div className="container__text">
-          <div className="text">
-            <h1>Intro</h1>
-          </div>
-            <p className="intro">Well, that's the trick, isn't it? And it's going to cost you something extra. Ten thousand in advance. Ten thousand? We could almost buy our own ship for that! But who's going to fly it, kid! You?</p> 
-            <p>You bet I could. I'm not such a bad pilot myself! We don't have to sit here and listen... We haven't that much with us. But we could pay you two thousand now, plus fifteen when we reach Alderaan. Seventeen, huh! Okay. You guys got yourself a ship. We'll leave as soon as you're ready. Docking bay Ninety-four. Ninety-four. Looks like somebody's beginning to take an interest in your handiwork. All right, we'll check it out.</p>  
+        
+            <h2>Intro</h2>
+          <div className="p">
+            <p>My name is Laura Gates, and I love Zumba!
+              From the very first time I was a student myself,
+              my life felt incomplete. After being a student for a year,
+              my desire to become an instructor and share my love for Zumba
+              with other students grew. My classes are a place to forget
+              about your cares, worries and responsibilities for one
+              hour, and to have fun while giving yourself the workout of your life!
+              Sign up and choose the classes you want, and I promise it will be the best choice you ever make.</p> 
           </div>
         </div>
         
-      </div>
     );
   }
 }
