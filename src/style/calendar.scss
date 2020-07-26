@@ -17,13 +17,38 @@
 
 .responsiveCal {
  
-  position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
-   
+  //position: relative; 
+  //padding-bottom: 60%; 
+  //height: 0; 
+  //overflow: hidden;
+  text-align: center;
   }
    
   .responsiveCal iframe {
    
-  position: absolute; top:0; left: 12%; right: 10%; width: 75%; height: 50%;
+  //position: absolute; 
+  //top:0; 
+  //left: 15%; 
+  //right: 15%; 
+  width: 75%; 
+  //height: 60%;
+  padding-top:30px;
+  padding-bottom:30px;
    
   }
    
+button.logout{
+  width:175px;
+  height:40px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+@media (max-width: 500px) {
+  .responsiveCal iframe {
+    height:600px;
+    padding-top:10px;
+    padding-bottom:10px;
+    width: 85%; 
+  
+  }
+}

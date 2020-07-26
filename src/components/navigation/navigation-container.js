@@ -9,7 +9,7 @@ export default class NavigationContainer extends Component {
 
 
   state = {
-    toggle: false
+    toggle: true
   };
 
   menuToggleOpen = () => {
@@ -32,9 +32,14 @@ export default class NavigationContainer extends Component {
               <li><Link to="/">Home</Link></li>
               
               <li><Link to="/my-zumba">Virtual Classes</Link></li>
+              {(this.props.isUserLoggedIn == "LOGGED_IN") ?
+                <li className={"headerLogoutMenuItem fakeHeaderLink"} onClick={(_x) => {this.props.logOutClicked()}}>Logout</li>
+              :""
+              }
             </ul>
-       
-          
+          {(this.props.isUserLoggedIn == "LOGGED_IN") ?
+          <div className={"headerLogoutButton fakeHeaderLink"} onClick={(_x) => {this.props.logOutClicked()}}>Logout</div> 
+          :""}
         </div>
         )
   }

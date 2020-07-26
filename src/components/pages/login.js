@@ -32,10 +32,11 @@ export default class Login extends Component {
   render(){
     let checkValue = "LOGGED_IN";
     if(this.props.IsUserLoggedIn == checkValue){
-      return(<div>
-        You are logged in as {this.props.LoggedInUserName}
-        <button onClick={this.LogoutButtonIsClicked} >Log out</button>
-        </div>);
+      // return(<div className="loggedin">
+      //   <p>You are logged in as {this.props.LoggedInUserName}</p>
+      //   <button className="logout" onClick={this.LogoutButtonIsClicked} >Log out</button>
+      //   </div>);
+      return("");
     }
     else {
       return(

@@ -32,8 +32,8 @@ export default class App extends Component {
       return (
         <div className="app"> 
           <Router>
-          <NavigationContainer />
-          <div style={{minHeight:"700px"}}>
+          <NavigationContainer isUserLoggedIn={this.state.loggedInStatus} logOutClicked={this.LogOut} />
+          <div>
               
             <Switch>
               <Route exact path="/" component={Home} />

@@ -108,6 +108,8 @@
   box-sizing: border-box;
   background-color: black;
   height: 100px;
+//  position:absolute;
+//  bottom:0px;
 }
 
 .inner_footer {
@@ -178,7 +180,7 @@
   .footer_text h6{
   font-size:10px;
   }
-  
+
   .inner_footer > .footer_text {
   text-align:right;
   padding-right:45px;

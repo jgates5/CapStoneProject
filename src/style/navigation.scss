@@ -8,6 +8,7 @@ body {
 background-color: black;
 }
 .header {
+  position: relative;
 min-height: 70px;
 background: black;
 color: white;
@@ -38,7 +39,9 @@ list-style: none;
 display: inline-block;
 }
 
-.header ul li a {
+.header ul li a,
+.header .fakeHeaderLink
+{
 text-decoration: none;
 color: white;
 text-transform: uppercase;
@@ -47,12 +50,22 @@ padding:0px 30px 40px 30px;
 font-size: 25px;
 }
 
-.header ul li a:hover {
+.header ul li a:hover,
+.header .fakeHeaderLink:hover
+{
 opacity: 1;
 }
 
+.header .fakeHeaderLink{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: .6;
+  cursor:pointer;
+}
+
 .header .close,
-.header .menu {
+.header .menu
+{
 cursor: pointer;
 text-decoration: uppercase;
 border: 1px solid white;
@@ -60,6 +73,16 @@ border: 1px solid white;
 display: none;
 }
 
+.header .headerLogoutButton{
+  float:right;
+  position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.header .headerLogoutMenuItem{
+  display: none;
+}
 
 
 .header .close {
@@ -68,12 +91,22 @@ right: 0px;
 border-radius: 5px;
 }
 
+
 @media (max-width: 750px) {
 .header ul{
   width: 100%;
   margin: 0;
   text-align: center;
   line-height: 50px;
+}
+.header ul li a,
+.header .headerLogoutButton,
+.header .headerLogoutMenuItem
+{
+  font-size: 20px; 
+}
+.header .headerLogoutButton{
+  top: 17px;
 }
 }
 
@@ -101,8 +134,24 @@ border-radius: 5px;
 .header .menu,
 .header .close {
   display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px 5px 5px 5px;
 }
 
+.header .headerLogoutButton{
+  display:none;
+}
+.header .headerLogoutMenuItem{
+  display: block;
+}
+
+.header ul li a,
+.header .headerLogoutButton,
+.header .headerLogoutMenuItem
+{
+  font-size: 30px; 
+}
 
 }
 
