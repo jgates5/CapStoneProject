@@ -81,10 +81,10 @@ export default class App extends Component {
         </div>
       );
     }
-    
+
     CreateNewUser = (userName,password) => {
       
-        fetch("https://final-project-bottega-jwg.herokuapp.com/user/create", {
+        fetch("https://api-backend-final-project-jwg.herokuapp.com/user/create", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
@@ -126,7 +126,7 @@ export default class App extends Component {
         
     }
     AttemptAuthenticate = (userName,password) => {
-      fetch("https://final-project-bottega-jwg.herokuapp.com/user/verification", {
+      fetch("https://api-backend-final-project-jwg.herokuapp.com/user/verification", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
