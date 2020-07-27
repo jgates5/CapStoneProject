@@ -81,10 +81,9 @@ export default class App extends Component {
         </div>
       );
     }
-
-    //****************Handle Login */
+    
     CreateNewUser = (userName,password) => {
-      //TODO: Do some error checking to make sure stuff is not blank
+      
         fetch("https://final-project-bottega-jwg.herokuapp.com/user/create", {
             method: "POST",
             headers: { "content-type": "application/json" },
