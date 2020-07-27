@@ -29,9 +29,9 @@ export default class NavigationContainer extends Component {
               <div style={{float:"right"}} className="close" onClick={this.menuToggleClose}>X</div>
             </div>
             <ul className={toggle ? "toggle" : ""}>
-              <li><Link to="/">Home</Link></li>
+              <li><Link onClick={(_x) => {this.setState({toggle:true})}} to="/">Home</Link></li>
               
-              <li><Link to="/signup-form">SIGNUP    FORM</Link></li>
+              <li><Link onClick={(_x) => {this.setState({toggle:true})}} to="/signup-form">SIGNUP</Link></li>
               {(this.props.isUserLoggedIn == "LOGGED_IN") ?
                 <li className={"headerLogoutMenuItem fakeHeaderLink"} onClick={(_x) => {this.props.logOutClicked()}}>Logout</li>
               :""

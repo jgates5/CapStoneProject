@@ -15,12 +15,16 @@ export default class App extends Component {
     if(cookieName){
       this.state = {
         loggedInStatus : "LOGGED_IN",
-        loggedInUserName : cookieName
+        loggedInUserName : cookieName,
+        loginErrorMessage:"",
+        signUpErrorMessage:"",
       }
     } else {
       this.state = {
         loggedInStatus: "NOT_LOGGED_IN",
         loggedInUserName: "",
+        loginErrorMessage:"",
+        signUpErrorMessage:"",
       };
   }
   }
@@ -48,7 +52,8 @@ export default class App extends Component {
              
               <Route path="/signup-form">
                 <MyZumba
-                  errorMessage={this.state.errorMessage}
+                  signUpErrorMessage={this.state.signUpErrorMessage}
+                  loginErrorMessage={this.state.loginErrorMessage}
                   TestUserNamePassword={this.AttemptAuthenticate}
                   LogUserOut={this.LogOut}
                   CreateNewUser={this.CreateNewUser}
@@ -81,7 +86,7 @@ export default class App extends Component {
     //****************Handle Login */
     CreateNewUser = (userName,password) => {
       //TODO: Do some error checking to make sure stuff is not blank
-        fetch("https://api-backend-final-project-jwg.herokuapp.com/user/create", {
+        fetch("https://final-project-bottega-jwg.herokuapp.com/user/create", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
@@ -89,37 +94,41 @@ export default class App extends Component {
                 password: password
             })
         })
-        .then(response => {return response.json();})
+        
+        .then(response => {return response.json();
+        })
         .then(response => {
           if (response === 'Successful') {
-            // console.log("You can come in");
-            this.handleSuccessfulLogin(userName);
+            console.log("You can come in");
+            this.handleSuccessfulUser(userName);
             //TODO: Tell the user it was successful
-          } else {
+          
+          } else  {
 
             //TODO: Tell the user why it failed
             this.setState({
-              errorMessage: "Username or Password taken"
+              loginErrorMessage: "Username Taken",
+              signUpErrorMessage:""
             });
             this.handleFailedLogin();
           }
         })
-  
+
         .catch(error => {
           // console.log(error)
           this.setState({
-            errorMessage: "An error occured"
-            
+            loginErrorMessage: "An error occured",
+            signUpErrorMessage:"",
+
           });
-            this.handleUnSuccessfulUser();
+            //this.handleUnSuccessfulUser();
         });
    
       event.preventDefault();
         
     }
-
     AttemptAuthenticate = (userName,password) => {
-      fetch("https://api-backend-final-project-jwg.herokuapp.com/user/verification", {
+      fetch("https://final-project-bottega-jwg.herokuapp.com/user/verification", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
@@ -139,7 +148,8 @@ export default class App extends Component {
           } else {
             // console.log(response);
             this.setState({
-              errorMessage: "Username or Password incorrect"
+              signUpErrorMessage: "Username or Password incorrect",
+              loginErrorMessage:"",
             });
             this.handleFailedLogin();
           }
@@ -147,7 +157,8 @@ export default class App extends Component {
         .catch(error => {
           // console.log(error)
           this.setState({
-            errorMessage: "An error occured" 
+            signUpErrorMessage: "An error occured",
+            loginErrorMessage:"",
           });
             this.handleFailedLogin();
         });
@@ -156,7 +167,9 @@ export default class App extends Component {
     LogOut = () => {
       Cookies.set('userName',"");
       this.setState({
-        loggedInStatus: "NOT_LOGGED_IN"
+        loggedInStatus: "NOT_LOGGED_IN",
+        loginErrorMessage:"",
+        signUpErrorMessage:"",
       });
     }
 
@@ -164,7 +177,9 @@ export default class App extends Component {
       Cookies.set('userName',userName);
       this.setState({
         loggedInStatus: "LOGGED_IN",
-        loggedInUserName: userName
+        loggedInUserName: userName,
+        loginErrorMessage:"",
+        signUpErrorMessage:"",
       });
     }
 

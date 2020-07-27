@@ -8,7 +8,8 @@ export default class MyZubma extends Component {
     return(
       <div>
         <Login 
-          errorMessage={this.props.errorMessage}
+          signUpErrorMessage={this.props.signUpErrorMessage}
+          loginErrorMessage={this.props.loginErrorMessage}
           TestUserNamePassword={this.props.TestUserNamePassword}
           LogUserOut={this.props.LogUserOut}
           CreateNewUser={this.props.CreateNewUser}

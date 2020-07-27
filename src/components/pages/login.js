@@ -52,6 +52,7 @@ export default class Login extends Component {
               Log In
             </div>
             <div className={"signup-form" + ((this.state.showSignup) ? " test" : " hidden")}>
+              <h5>{this.props.loginErrorMessage}</h5>
                 <input
                 type="username"
                 name="newUsername"
@@ -70,7 +71,7 @@ export default class Login extends Component {
               <div className="button" onClick={(ev) => {this.CreateButtonIsClicked()}}>Create Account</div>
             </div>
             <div className={"login-form" + ((this.state.showLogin) ? " test" : " hidden") }>
-                <h5>{this.props.errorMessage}</h5>
+                <h5>{this.props.signUpErrorMessage}</h5>
                 <input
                 type="username"
                 name="username"
