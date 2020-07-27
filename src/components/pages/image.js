@@ -8,9 +8,9 @@ export default class ZumbaPicture extends Component {
             <img className="container__image" 
             src={Zumba} alt="" />
         
-            <h2>ABOUT LAURA</h2>
+            <h2>Intro</h2>
           <div className="p">
-            <p>My name is Laura Gates, and I love Zumba!
+            <p>My name is Laura Gates. I love Zumba!
               From the very first time I was a student myself,
               my life felt incomplete. After being a student for a year,
               my desire to become an instructor and share my love for Zumba

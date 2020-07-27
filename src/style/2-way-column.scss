@@ -13,7 +13,9 @@
   margin-right:auto;
  }
 
-
+.responsive p {
+  margin-top: 100px;
+}
 
 .responsive img {
   max-width: 100%;
@@ -46,9 +48,14 @@
 .responsive p {
   font-size: 20px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   
 }
+
+p {
+  margin-top: 100px;
+}
+
 // .box-container {
 //   display: flex;
 //   justify-content: center;

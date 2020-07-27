@@ -46,7 +46,7 @@ export default class App extends Component {
               // )}
               /> */}
              
-              <Route path="/my-zumba">
+              <Route path="/signup-form">
                 <MyZumba
                   errorMessage={this.state.errorMessage}
                   TestUserNamePassword={this.AttemptAuthenticate}
@@ -63,7 +63,7 @@ export default class App extends Component {
           <div className= "footer">
             <div className="inner_footer">
               <div className="logo_container">
-                  <h4>Follow Us</h4>
+                  <h4>Follow-Me</h4>
                 <a href="https://www.instagram.com/lauragates2/">
                   <img src="https://4.bp.blogspot.com/-An6np82QKTQ/V4ego8qnXzI/AAAAAAAABqE/kyM3AaEyvv0aKi3cQl9-nRRry4tVXjG9gCEw/s1600/The+New+Instagram+Logo+With+Transparent+Background+11.png" alt="my picture" />
                 </a>
