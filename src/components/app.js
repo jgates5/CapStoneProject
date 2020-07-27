@@ -75,7 +75,6 @@ export default class App extends Component {
               </div>
           
               <div className="footer_text">
-                <h6>COPY RIGHT BY BOTTEGA PROJECT</h6> 
               </div>
             </div>
           </div>
@@ -100,7 +99,7 @@ export default class App extends Component {
         .then(response => {
           if (response === 'Successful') {
             console.log("You can come in");
-            this.handleSuccessfulUser(userName);
+            this.handleSuccessfulLogin(userName);
             //TODO: Tell the user it was successful
           
           } else  {

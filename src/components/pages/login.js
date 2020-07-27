@@ -40,6 +40,7 @@ export default class Login extends Component {
     }
     else {
       return(
+        <div className="page">
           <div className="container">
             <div className={"signup" + ((this.state.showSignup) ? "" : " grey")  }
               onClick={this.showSignupSection}
@@ -89,7 +90,7 @@ export default class Login extends Component {
               <div className="button" onClick={(ev) => {this.LoginButtonIsClicked()}}>Login</div>
             </div>
           </div>
-          
+        </div>
       
       );
     }
