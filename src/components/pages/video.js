@@ -18,7 +18,7 @@ import Beat from "../../../static/assets/img/dj.jpg";
         <div className="video-text">
             <h1>Virtual Classes</h1>
             <form>
-            <button className="sign-up-button" formaction="/my-zumba">Sign Up!</button>
+            {/* <button className="sign-up-button" formaction="/signup-form">Sign Up!</button> */}
             </form>
         </div>
       </div>

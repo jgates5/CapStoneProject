@@ -30,8 +30,11 @@ export default class NavigationContainer extends Component {
             </div>
             <ul className={toggle ? "toggle" : ""}>
               <li><Link onClick={(_x) => {this.setState({toggle:true})}} to="/">Home</Link></li>
-              
+              {(this.props.isUserLoggedIn != "LOGGED_IN") ?
               <li><Link onClick={(_x) => {this.setState({toggle:true})}} to="/signup-form">SIGNUP</Link></li>
+              :
+              <li><Link onClick={(_x) => {this.setState({toggle:true})}} to="/signup-form">CALENDAR</Link></li>
+              }
               {(this.props.isUserLoggedIn == "LOGGED_IN") ?
                 <li className={"headerLogoutMenuItem fakeHeaderLink"} onClick={(_x) => {this.props.logOutClicked()}}>Logout</li>
               :""

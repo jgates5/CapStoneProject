@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Home from "./pages/home";
 
-import MyZumba from "./pages/my-zumba";
+import MyZumba from "./pages/signup-form";
 import NavigationContainer from "./navigation/navigation-container"
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Cookies from "js-cookie";

@@ -11,8 +11,8 @@ export default class Login extends Component {
       password:"",
       newUsername:"",
       newPassword:"",
-      showSignup:false,
-      showLogin:true
+      showSignup:true,
+      showLogin:false
     };
  
       this.handleSuccessfulUser = this.handleSuccessfulUser.bind(this);
@@ -22,7 +22,7 @@ export default class Login extends Component {
     handleSuccessfulUser() {
     this.props.TestUserNamePassword();
     // gives access the site where did they navigate to
-    this.props.history.push("/my-zumba");
+    this.props.history.push("/signup-form");
     }
 
     handleUnSuccessfulUser() {
