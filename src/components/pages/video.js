@@ -16,7 +16,7 @@ import Beat from "../../../static/assets/img/dj.jpg";
         frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
         </iframe>
         <div className="video-text">
-            <h1>ZUMBA CLASSES</h1>
+            <h1>Virtual Classes</h1>
             <form>
             <button className="sign-up-button" formaction="/my-zumba">Sign Up!</button>
             </form>

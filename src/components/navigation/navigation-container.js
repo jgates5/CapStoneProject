@@ -31,7 +31,7 @@ export default class NavigationContainer extends Component {
             <ul className={toggle ? "toggle" : ""}>
               <li><Link to="/">Home</Link></li>
               
-              <li><Link to="/my-zumba">Virtual Classes</Link></li>
+              <li><Link to="/my-zumba">ZUMBA</Link></li>
               {(this.props.isUserLoggedIn == "LOGGED_IN") ?
                 <li className={"headerLogoutMenuItem fakeHeaderLink"} onClick={(_x) => {this.props.logOutClicked()}}>Logout</li>
               :""
