@@ -43,6 +43,7 @@ export default class NavigationContainer extends Component {
           {(this.props.isUserLoggedIn == "LOGGED_IN") ?
           <div className={"headerLogoutButton fakeHeaderLink"} onClick={(_x) => {this.props.logOutClicked()}}>Logout</div> 
           :""}
+          <h3>Hi Git</h3>
         </div>
         )
   }
